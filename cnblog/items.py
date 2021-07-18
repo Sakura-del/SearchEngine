@@ -27,6 +27,7 @@ class CnblogItem(scrapy.Item):
         cnblogObj.description = self['item_summary']
         cnblogObj.url = self['title_link']
         cnblogObj.riqi = self['post_date']
+        cnblogObj.site = '博客园'
         cnblogObj.save()                                # 将数据写入elasticsearch(搜索引擎对象)
         return
 

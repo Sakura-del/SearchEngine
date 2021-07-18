@@ -4,7 +4,7 @@
 
 本项目是一个基于Scrapy+Django+elasticsearch的搜索引擎。
 
-
+本项目使用的数据已导出为Excel文件和json文件。
 
 ## 内容列表
 

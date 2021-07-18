@@ -7,7 +7,7 @@ from cnblog.items import CnblogItem,JobboleItem
 class Cnblog_Spider(scrapy.Spider):
     name = 'cnblog'
     allowed_domains = ['jobbole.com']
-    start_urls = ['http://www.jobbole.com/keji/']
+    start_urls = ['http://www.jobbole.com/xiaofei/']
 
     def parse(self, response):
         divLst = response.xpath('//div[@class = "list-item"]')

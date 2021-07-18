@@ -44,7 +44,7 @@ def searchluoji(request):  # 搜索逻辑处理
     end_time = datetime.now()  # 获取当前时间
     last_time = (end_time - start_time).total_seconds()  # 结束时间减去开始时间等于用时,转换成秒
     total_nums = response["hits"]["total"]  # 获取查询结果的总条数
-    page_nums = int(total_nums / 10) + 1
+    page_nums = int(total_nums / 10) + 1    # 总页数向上取整
 
     hit_list = []  # 设置一个列表来储存搜索到的信息，返回给html页面
     for hit in response["hits"]["hits"]:

@@ -13,17 +13,17 @@ class CnblogPipeline(object):
         item.save_to_es()
         return item
 
-# class JsonPipeline(object):
-#     def __init__(self):
-#         self.fp = open('cnblogs.json','wb')
-#         self.exporter = JsonLinesItemExporter(self.fp,ensure_ascii=False,encoding='utf-8')
-#         self.fp.write(b'[')
-#
-#     def process_item(self, item, spider):
-#         self.exporter.export_item(item)
-#         self.fp.write(b',')
-#         return item
-#
-#     def close_spider(self, spider):
-#         self.fp.write(b"]")
-#         self.fp.close()
+class JsonPipeline(object):
+    def __init__(self):
+        self.fp = open('cnblogs.json','wb')
+        self.exporter = JsonLinesItemExporter(self.fp,ensure_ascii=False,encoding='utf-8')
+        self.fp.write(b'[')
+
+    def process_item(self, item, spider):
+        self.exporter.export_item(item)
+        self.fp.write(b',')
+        return item
+
+    def close_spider(self, spider):
+        self.fp.write(b"]")
+        self.fp.close()
